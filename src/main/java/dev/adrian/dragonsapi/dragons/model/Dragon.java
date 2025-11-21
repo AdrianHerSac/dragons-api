@@ -5,11 +5,12 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.UUID;
 
 /**
- * Modelo que representa al dragon {@link Dragon}
+ * Modelo que representa al dragon
  * con su categoria {@link Category}
  *
  * @see Category
@@ -39,7 +40,7 @@ public class Dragon {
 
     private String location;
 
-    private Date fechaDeEncuentro;
+    private LocalDate fechaDeAparicion;
 
-    private Date ultimaAparicion;
+    private LocalDate ultimaAparicion;
 }

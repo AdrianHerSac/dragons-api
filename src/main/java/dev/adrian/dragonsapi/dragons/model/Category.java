@@ -8,6 +8,15 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 
+/**
+ * Modelo que representa la categoria del dragon {@link Dragon}
+ *
+ * @see Dragon
+ *
+ * @author dev.adrian
+ * @version 1.0
+ * @since 2025
+ */
 @Entity
 @Table(name = "categories")
 @Data
@@ -24,7 +33,6 @@ public class Category {
 
     private Double speed;
 
-    @Column(nullable = false)
     private String description;
 
     @JsonIgnore

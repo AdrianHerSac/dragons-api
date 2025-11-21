@@ -12,6 +12,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
+import java.lang.annotation.Annotation;
 import java.util.Optional;
 
 /**
@@ -58,5 +59,15 @@ public class DragonServiceImpl implements DragonService {
                 .and(specCategory);
 
         return dragonRepository.findAll(finalSpec, pageable);
+    }
+
+    @Override
+    public String value() {
+        return "";
+    }
+
+    @Override
+    public Class<? extends Annotation> annotationType() {
+        return null;
     }
 }

@@ -4,8 +4,8 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
 
+import java.util.Date;
 import java.util.UUID;
 
 /**
@@ -38,4 +38,8 @@ public class Dragon {
     private String image;
 
     private String location;
+
+    private Date fechaDeEncuentro;
+
+    private Date ultimaAparicion;
 }

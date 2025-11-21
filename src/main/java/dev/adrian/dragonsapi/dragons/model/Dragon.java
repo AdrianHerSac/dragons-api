@@ -29,16 +29,13 @@ public class Dragon {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
-    @Column(nullable = false, unique = true)
-    private String name;
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
 
     private String color;
 
     private String image;
 
     private String location;
-
-    @ManyToOne
-    @JoinColumn(name = "category_id")
-    private Category category;
 }

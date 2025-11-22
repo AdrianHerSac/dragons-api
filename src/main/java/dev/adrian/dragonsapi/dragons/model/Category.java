@@ -36,6 +36,6 @@ public class Category {
     private String description;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "category")
     private List<Dragon> dragons;
 }

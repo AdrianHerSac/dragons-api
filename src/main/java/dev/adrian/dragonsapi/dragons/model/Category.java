@@ -5,8 +5,10 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import java.util.List;
+import java.util.UUID;
 
 /**
  * Modelo que representa la categoria del dragon {@link Dragon}
@@ -17,6 +19,7 @@ import java.util.List;
  * @version 1.0
  * @since 2025
  */
+
 @Entity
 @Table(name = "categories")
 @Data
@@ -26,16 +29,15 @@ public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private UUID id;
 
     @Column(nullable = false, unique = true)
     private String name;
 
-    private Double speed;
-
     private String description;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "category")
+    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
+    @ToString.Exclude
     private List<Dragon> dragons;
 }

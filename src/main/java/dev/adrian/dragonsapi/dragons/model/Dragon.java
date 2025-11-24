@@ -5,8 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
-import java.util.Date;
+import java.math.BigDecimal;
 import java.util.UUID;
 
 /**
@@ -19,8 +18,9 @@ import java.util.UUID;
  * @version 1.0
  * @since 2025
  */
+
 @Entity
-@Table(name = "dragons")
+@Table(name = "dragon_plushies")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -31,16 +31,23 @@ public class Dragon {
     private UUID id;
 
     @ManyToOne
-    @JoinColumn(name = "category_id")
+    @JoinColumn(name = "category_id", nullable = false)
     private Category category;
+
+    private String name;
 
     private String color;
 
     private String image;
 
-    private String location;
+    @Enumerated(EnumType.STRING)
+    private Size size;
 
-    private LocalDate fechaDeAparicion;
+    private BigDecimal price;
 
-    private LocalDate ultimaAparicion;
+    private int stock;
+
+    public enum Size {
+        S, M, L, XL
+    }
 }

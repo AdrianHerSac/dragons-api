@@ -20,9 +20,13 @@ public class GENERICDragonResponseDTO {
 
     private String color;
 
-    private String image;
+    private String size;
 
-    private String location;
+    private String price;
+
+    private String stock;
+
+    private String image;
 
     private Category category;
 }

@@ -8,8 +8,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
-
 @Service
 public class DragonServiceImpl implements DragonService {
 
@@ -21,13 +19,30 @@ public class DragonServiceImpl implements DragonService {
     }
 
     @Override
-    public Page<Dragon> findAll(Optional<String> name,
-                                Optional<Double> maxSpeed,
-                                Optional<String> category,
-                                Pageable pageable) {
+    public Page<Dragon> findAll(Pageable pageable) {
 
-        log.info("In DragonServiceImpl findAll with filters");
+        log.info("Buscando todos los datos para obtener los dragones");
 
         return dragonRepository.findAll(pageable);
+    }
+
+    @Override
+    public Dragon findById(long id) {
+        log.info("");
+        return null;
+    }
+
+    @Override
+    public Dragon findByNameIgnoreCase(String name) {
+        return null;
+    }
+
+    @Override
+    public Dragon save(Dragon dragon) {
+        return null;
+    }
+
+    @Override
+    public void delete(Dragon dragon) {
     }
 }

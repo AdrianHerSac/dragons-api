@@ -43,7 +43,7 @@ public class Dragon {
     @Enumerated(EnumType.STRING)
     private Size size;
 
-    private BigDecimal price;
+    private Double price;
 
     private int stock;
 

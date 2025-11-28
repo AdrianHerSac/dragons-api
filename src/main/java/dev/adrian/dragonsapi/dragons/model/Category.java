@@ -1,13 +1,10 @@
 package dev.adrian.dragonsapi.dragons.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 
-import java.util.List;
 import java.util.UUID;
 
 /**
@@ -31,13 +28,8 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
-    @Column(nullable = false, unique = true)
-    private String name;
+    @Column(unique = true, length = 100)
+    private String nombre;
 
     private String description;
-
-    @JsonIgnore
-    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
-    @ToString.Exclude
-    private List<Dragon> dragons;
 }

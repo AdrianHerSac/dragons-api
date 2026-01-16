@@ -1,4 +1,4 @@
-package dev.adrian.dragonsapi.dragons.model;
+package dev.adrian.dragonsapi.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

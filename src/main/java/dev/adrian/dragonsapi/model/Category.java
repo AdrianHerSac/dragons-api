@@ -1,4 +1,4 @@
-package dev.adrian.dragonsapi.dragons.model;
+package dev.adrian.dragonsapi.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -29,7 +29,7 @@ public class Category {
     private UUID id;
 
     @Column(unique = true, length = 100)
-    private String nombre;
+    private String name;
 
     private String description;
 }

@@ -1,7 +1,7 @@
-package dev.adrian.dragonsapi.dragons.service;
+package dev.adrian.dragonsapi.service;
 
-import dev.adrian.dragonsapi.dragons.model.Category;
-import dev.adrian.dragonsapi.dragons.repository.CategoryRepository;
+import dev.adrian.dragonsapi.model.Category;
+import dev.adrian.dragonsapi.repository.CategoryRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -9,6 +9,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
+import java.util.UUID;
 
 @Service
 public class CategoryServiceImpl implements CategoryService {
@@ -20,7 +21,6 @@ public class CategoryServiceImpl implements CategoryService {
         this.categoryRepository = categoryRepository;
     }
 
-
     @Override
     public Page<Category> findAll(Pageable pageable) {
         log.info("Finding all categories");
@@ -28,7 +28,7 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
-    public Optional<Category> findCategoryById(long id) {
+    public Optional<Category> findCategoryById(UUID id) {
         log.info("Finding category with id {}", id);
         return categoryRepository.findById(id);
     }

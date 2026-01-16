@@ -1,7 +1,7 @@
-package dev.adrian.dragonsapi.dragons.repository;
+package dev.adrian.dragonsapi.repository;
 
-import dev.adrian.dragonsapi.dragons.model.Category;
-import dev.adrian.dragonsapi.dragons.model.Dragon;
+import dev.adrian.dragonsapi.model.Category;
+import dev.adrian.dragonsapi.model.Dragon;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;

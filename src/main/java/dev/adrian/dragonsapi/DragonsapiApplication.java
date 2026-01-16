@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class DragonsapiApplication {
 
-    void main() {
-        SpringApplication.run(DragonsapiApplication.class);
+    public static void main(String[] args) {
+        SpringApplication.run(DragonsapiApplication.class, args);
     }
 }
